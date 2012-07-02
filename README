@@ -20,4 +20,5 @@ general
 
 installation
 The requiered frameworks should be loaded via maven the requiered pom.xml file is included.
+The database should be set up with the help of the sql.sql file in /database/. (example data included)
 
