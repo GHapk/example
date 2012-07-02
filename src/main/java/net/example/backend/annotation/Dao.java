@@ -4,7 +4,9 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 /**
- * Define the entity class at the corresponding dao
+ * Define the entity class at the corresponding dao.
+ * Needed for AbstractDao implementation
+ * 
  * @author andre
  */
 @Retention(RetentionPolicy.RUNTIME)
