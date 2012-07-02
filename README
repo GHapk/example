@@ -1,0 +1,23 @@
+This example shows a litte car shop.
+
+Functionality
+
+User:
+- add / edit user to the shop (admin rights expected)
+- users can be seller or customer
+- each user can be admin
+- user list / edit / add not linked (url: /admin/userList.xhtml)
+
+Car
+Seller
+- add / edit three types of cars (normal, cabrio, pickup)
+Customer
+- display car details
+- oder car --> select payment cash or creditcard
+
+general
+- shop is secured via spring security 3
+
+installation
+The requiered frameworks should be loaded via maven the requiered pom.xml file is included.
+

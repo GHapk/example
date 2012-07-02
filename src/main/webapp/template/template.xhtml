@@ -15,12 +15,12 @@
 
         <div id="top" class="top">Navigation
             <h:form>
-                <h:panelGrid columns="1" id="customer_menu" rendered="#{menuBean.renderCustomer}">
-                    <h:commandLink value="available cars" action="#{customerBean.prepareCarList()}" />
+                <h:panelGrid columns="3" id="customer_menu" rendered="#{menuBean.renderCustomer}">
+                    <h:commandLink value="available cars" action="#{customerBean.prepareCarList()}" /> | 
                     <h:commandLink value="bought cars" action="#{customerBean.prepareCarListBought()}" />
                 </h:panelGrid>
-                <h:panelGrid columns="1" id="seller_menu" rendered="#{menuBean.renderSeller}">
-                    <h:commandLink value="available cars" action="#{sellerBean.prepareList()}" />
+                <h:panelGrid columns="3" id="seller_menu" rendered="#{menuBean.renderSeller}">
+                    <h:commandLink value="available cars" action="#{sellerBean.prepareList()}" /> | 
                     <h:commandLink value="sold cars" action="#{sellerBean.prepareListSold()}" />
                 </h:panelGrid>
                 <h:outputLink value="${pageContext.request.contextPath}/example/j_spring_security_logout">logout</h:outputLink>

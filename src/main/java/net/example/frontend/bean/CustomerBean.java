@@ -125,6 +125,7 @@ public class CustomerBean {
         this.currentOrder = new Carorder();
         this.currentOrder.setCar(this.currentCar);
         this.currentOrder.setDate(new Date(Calendar.getInstance().getTimeInMillis()));
+        this.currentOrder.setCustomer(CurrentUser.INSTANCE.getUser());
         
         if(cash){
             this.currentPayment = new Cash();

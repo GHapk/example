@@ -74,6 +74,12 @@
                     </f:facet>
                     <h:outputText value="#{car.carorder.payment.invoiceNumber}" />
                 </h:column>
+                <h:column >
+                    <f:facet name="header">
+                        date
+                    </f:facet>
+                    <h:outputText value="#{car.carorder.payment.relevantDateString}" />
+                </h:column>
             </h:dataTable>
         </h:panelGrid>
     </ui:define>

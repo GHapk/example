@@ -26,5 +26,10 @@ public class Cash extends Payment{
         this.pickupdate = pickupdate;
     }
     
+    @Override
+    public String getRelevantDateString(){
+        
+        return "pickup: " + this.pickupdate;
+    }
     
 }

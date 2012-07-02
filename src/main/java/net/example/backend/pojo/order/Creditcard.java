@@ -36,5 +36,10 @@ public class Creditcard extends Payment{
     public void setDeliveryDate(Date deliveryDate) {
         this.deliveryDate = deliveryDate;
     }
-   
+
+    @Override
+    public String getRelevantDateString(){
+        return "delivery: " + this.getDeliveryDate();
+    }
+    
 }

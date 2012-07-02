@@ -77,6 +77,8 @@ public class Payment {
         this.order = order;
     }
     
-    
+    public String getRelevantDateString(){
+        return null;
+    }
     
 }
