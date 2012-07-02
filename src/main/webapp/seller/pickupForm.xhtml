@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./../template/carFormTemplate.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="carDetails">
+        <h:outputLabel for="cargo_area" value="cargo area (qm)"/>
+        <h:inputText id="cargo_area" value="#{sellerBean.currentCar.cargoArea}"/>
+        <h:outputLabel for="cargo_closeable" value="cargo closeable"/>
+        <h:selectOneRadio id="cargo_closeable" value="#{sellerBean.currentCar.cargoCloseable}">
+            <f:selectItem itemLabel="yes" itemValue="true" />
+            <f:selectItem itemLabel="no" itemValue="false" />
+        </h:selectOneRadio>
+    </ui:define>
+
+</ui:composition>

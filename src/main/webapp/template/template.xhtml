@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="../resources/css/default.css" rel="stylesheet" type="text/css" />
+        <link href="../resources/css/cssLayout.css" rel="stylesheet" type="text/css" />
+        <title>Example</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="top" class="top">Navigation
+            <h:form>
+                <h:panelGrid columns="1" id="customer_menu" rendered="#{menuBean.renderCustomer}">
+                    <h:commandLink value="available cars" action="#{customerBean.prepareCarList()}" />
+                    <h:commandLink value="bought cars" action="#{customerBean.prepareCarListBought()}" />
+                </h:panelGrid>
+                <h:panelGrid columns="1" id="seller_menu" rendered="#{menuBean.renderSeller}">
+                    <h:commandLink value="available cars" action="#{sellerBean.prepareList()}" />
+                    <h:commandLink value="sold cars" action="#{sellerBean.prepareListSold()}" />
+                </h:panelGrid>
+                <h:outputLink value="${pageContext.request.contextPath}/example/j_spring_security_logout">logout</h:outputLink>
+            </h:form>
+        </div>
+
+        <div id="content" class="center_content">
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+
+    </h:body>
+
+</html>

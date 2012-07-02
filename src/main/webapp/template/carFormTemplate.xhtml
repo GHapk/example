@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./../template/template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <ui:define name="content">
+        <h:form>
+            <h:panelGrid>
+                <h:outputLabel for="hp" value="hp" />
+                <h:inputText id="hp" value="#{sellerBean.currentCar.hp}" required="true"/>
+                <h:outputLabel for="fuel" value="fuel" />
+                <h:inputText id="fuel" value="#{sellerBean.currentCar.fuel}" required="true"/>
+                <h:outputLabel for="fabrication_month" value="fabrication month" />
+                <h:inputText id="fabrication_month" value="#{sellerBean.currentCar.fabricationMonth}" required="true"/>
+                <h:outputLabel for="fabrication_year" value="fabrication year" />
+                <h:inputText id="fabrication_year" value="#{sellerBean.currentCar.fabricationYear}" required="true"/>
+                <h:outputLabel for="mileage" value="mileage" />
+                <h:inputText id="mileage" value="#{sellerBean.currentCar.mileage}" required="true"/>
+                <h:outputLabel for="manufacturer" value="manufacturer" />
+                <h:inputText id="manufacturer" value="#{sellerBean.currentCar.manufacturer}" required="true"/>
+                <h:inputHidden id="type" value="#{sellerBean.currentCar.type}" />
+                <h:outputLabel for="price" value="price" />
+                <h:inputText id="price" value="#{sellerBean.currentCar.price}" required="true"/>
+                
+                <ui:insert name="carDetails"></ui:insert>
+                <h:commandButton value="save" action="#{sellerBean.save()}" />
+                <h:commandButton value="cancel" action="#{sellerBean.prepareList()}" />
+            </h:panelGrid>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./../template/template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <ui:define name="content">
+        <h:form>
+            <h:panelGrid>
+                <h:dataTable value="#{customerBean.availableCars}" var="car" binding="#{customerBean.carTable}">
+                    <h:column >
+                        <f:facet name="header">
+                            hp
+                        </f:facet>
+                        <h:outputText value="#{car.hp}" />
+                    </h:column>
+                    <h:column >
+                        <f:facet name="header">
+                            fuel
+                        </f:facet>
+                        <h:outputText value="#{car.fuel}" />
+                    </h:column>
+                    <h:column >
+                        <f:facet name="header">
+                            fabrication month
+                        </f:facet>
+                        <h:outputText value="#{car.fabricationMonth}" />
+                    </h:column>
+                    <h:column >
+                        <f:facet name="header">
+                            fabrication year
+                        </f:facet>
+                        <h:outputText value="#{car.fabricationYear}" />
+                    </h:column>
+                    <h:column >
+                        <f:facet name="header">
+                            mileage
+                        </f:facet>
+                        <h:outputText value="#{car.mileage}" />
+                    </h:column>
+                    <h:column >
+                        <f:facet name="header">
+                            manufacturer
+                        </f:facet>
+                        <h:commandLink value="#{car.manufacturer}" action="#{customerBean.prepareDetails()}" />
+                    </h:column>
+                    <h:column >
+                        <f:facet name="header">
+                            type
+                        </f:facet>
+                        <h:outputText value="#{car.type}" />
+                    </h:column>
+                    <h:column >
+                        <f:facet name="header">
+                            price
+                        </f:facet>
+                        <h:outputText value="#{car.price}" />
+                    </h:column>
+                </h:dataTable>
+            </h:panelGrid>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

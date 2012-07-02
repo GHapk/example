@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./../template/template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="content">
+        <h:form>
+            <h:panelGrid>
+                <h:commandButton value="New User" action="#{userBean.prepareNew()}" />
+                <h:dataTable var="user" value="#{userBean.users}" binding="#{userBean.userTable}">
+                    <h:column>
+                        <f:facet name="header">
+                            email
+                        </f:facet>
+                        <h:commandLink value="#{user.email}" action="#{userBean.prepareEdit()}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            name
+                        </f:facet>
+                        <h:outputText value="#{user.name}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            family name
+                        </f:facet>
+                        <h:outputText value="#{user.familyname}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            company
+                        </f:facet>
+                        <h:outputText value="#{user.company_name}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            tel
+                        </f:facet>
+                        <h:outputText value="#{user.tel}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            type
+                        </f:facet>
+                        <h:outputText value="#{user.type}"/>
+                    </h:column>
+                </h:dataTable>
+            </h:panelGrid>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

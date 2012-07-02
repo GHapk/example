@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./../template/carFormTemplate.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="carDetails">
+        <h:outputLabel for="hood_type" value="hood type"/>
+        <h:selectOneListbox id="hood_type" value="#{sellerBean.currentCar.hoodType}">
+            <f:selectItem itemLabel="hardtop" itemValue="HARDTOP" />
+            <f:selectItem itemLabel="cloth" itemValue="CLOTH" />
+        </h:selectOneListbox>
+        <h:outputLabel for="hood_open_time" value="hood open time"/>
+        <h:inputText value="#{sellerBean.currentCar.hoodOpenTime}" />
+        <h:outputLabel for="open_speed" value="open_speed"/>
+        <h:inputText value="#{sellerBean.currentCar.openSpeed}" />
+    </ui:define>
+
+</ui:composition>

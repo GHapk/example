@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./../template/template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html">
+    <ui:define name="content">
+        <h:form>
+            <h:dataTable var="entry" value="#{customerBean.currentCar.details.entrySet().toArray()}">
+                <h:column>
+                    <h:outputText value="#{entry.key}:"/>
+                </h:column>
+                <h:column>
+                    <h:outputText value="#{entry.value}"/>
+                </h:column>
+            </h:dataTable>
+            <h:commandButton value="back" action="#{customerBean.prepareCarList()}" />
+            <h:commandButton value="order (pay cash)" action="#{customerBean.orderCarCash()}" />
+            <h:commandButton value="order (pay creditcard)" action="#{customerBean.orderCarCreditcard()}" />
+        </h:form>
+    </ui:define>
+
+</ui:composition>

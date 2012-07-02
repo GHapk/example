@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./../template/template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="content">
+        <h:form>
+            <h:panelGrid>
+                <h:inputHidden id="id" value="#{userBean.currentUser.id}" />
+                <h:outputLabel for="email" value="email (login)" />
+                <h:inputText id="email" value="#{userBean.currentUser.email}" required="true"/>
+                <h:outputLabel for="password" value="password" />
+                <h:inputSecret id="password" value="#{userBean.currentUser.password}" required="true"/>
+                <h:outputLabel for="name" value="name" />
+                <h:inputText id="name" value="#{userBean.currentUser.name}" required="true"/>
+                <h:outputLabel for="familyname" value="familyname" />
+                <h:inputText id="familyname" value="#{userBean.currentUser.familyname}" required="true"/>
+                <h:outputLabel for="tel" value="tel" />
+                <h:inputText id="tel" value="#{userBean.currentUser.tel}" required="true"/>
+                <h:outputLabel for="company_name" value="company_name" />
+                <h:inputText id="company_name" value="#{userBean.currentUser.company_name}" />
+                <h:outputLabel for="type" value="type" />
+                <h:selectOneRadio id="type" value="#{userBean.currentUser.type}" required="true">
+                    <f:selectItem id="typeCustomer" itemValue="CUSTOMER" itemLabel="customer"></f:selectItem>
+                    <f:selectItem id="typeSeller" itemValue="SELLER" itemLabel="seller"></f:selectItem>
+                </h:selectOneRadio>
+                <h:outputLabel for="admin" value="admin" />
+                <h:selectOneRadio id="admin" value="#{userBean.currentUser.admin}" required="true">
+                    <f:selectItem id="adminNo" itemValue="false" itemLabel="no"></f:selectItem>
+                    <f:selectItem id="adminYes" itemValue="true" itemLabel="yes"></f:selectItem>
+                </h:selectOneRadio>
+                <h:commandButton value="save" action="#{userBean.saveUser()}"/>
+        </h:panelGrid>
+        </h:form>
+    </ui:define>
+
+</ui:composition>
